@@ -1,11 +1,11 @@
 export const theme = {
   colors: {
-    background: '#f5f5f5',
-    text: '#333',
-    primary: '#4CAF50'
+    background: '#28282B',
+    primary: '#FF4713',
+    text: '#fff',
   },
   fonts: {
     body: "'Roboto', sans-serif",
-    heading: "'Merriweather', serif"
+    heading: "'Roboto', sans-serif" 
   }
 };

@@ -10,12 +10,13 @@ const Nav = styled.nav`
   position: fixed;
   top: 0;
   z-index: 1000;
+  background-color: ${({ theme }) => theme.colors.background};
 `;
 
 const Logo = styled.h1`
   font-size: 1.5rem;
   font-weight: bold;
-  color: ${({ theme }) => theme.colors.primary};
+  color: ${({ theme }) => theme.colors.text};
 `;
 
 const Menu = styled.div`
@@ -23,14 +24,31 @@ const Menu = styled.div`
     margin-left: 2rem;
     text-decoration: none;
     color: ${({ theme }) => theme.colors.text};
-    font-weight: bold;
+    font-weight: 400;
+    position: relative;
     transition: color 0.3s ease;
 
     &:hover {
       color: ${({ theme }) => theme.colors.primary};
     }
+
+    &::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      bottom: -3px;
+      width: 0;
+      height: 2px;
+      background-color: ${({ theme }) => theme.colors.text};
+      transition: width 0.3s ease;
+    }
+
+    &:hover::after {
+      width: 100%;
+    }
   }
 `;
+
 
 const Header = () => {
   return (
