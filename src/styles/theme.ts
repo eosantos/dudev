@@ -6,6 +6,6 @@ export const theme = {
   },
   fonts: {
     body: "'Roboto', sans-serif",
-    heading: "'Roboto', sans-serif" 
-  }
+    heading: "'Roboto', sans-serif",
+  },
 };

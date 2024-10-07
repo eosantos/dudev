@@ -6,11 +6,10 @@ const Nav = styled.nav`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: white;
+  background-color: ${({ theme }) => theme.colors.background};
   position: fixed;
   top: 0;
   z-index: 1000;
-  background-color: ${({ theme }) => theme.colors.background};
 `;
 
 const Logo = styled.h1`
@@ -48,7 +47,6 @@ const Menu = styled.div`
     }
   }
 `;
-
 
 const Header = () => {
   return (

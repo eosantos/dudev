@@ -1,7 +1,8 @@
+'use client';
+
 import styled from 'styled-components';
 import { motion } from 'framer-motion';
 
-// Definindo a interface para o projeto
 interface Project {
   title: string;
   description: string;
@@ -19,7 +20,7 @@ const Card = styled(motion.div)`
   }
 
   p {
-    color: ${({ theme }) => theme.colors.text};
+    color: ${({ theme }) => theme.colors.primary};
   }
 `;
 
@@ -27,12 +28,14 @@ interface ProjectCardProps {
   project: Project;
 }
 
+export const metadata = {
+  title: 'Meu Site',
+  description: 'Descrição do meu site',
+};
+
 const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
   return (
-    <Card
-      whileHover={{ scale: 1.05 }}
-      whileTap={{ scale: 0.95 }}
-    >
+    <Card whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
       <h3>{project.title}</h3>
       <p>{project.description}</p>
     </Card>
