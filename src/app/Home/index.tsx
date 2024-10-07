@@ -1,4 +1,5 @@
 import Hero from '../components/Hero';
+import About from '../components/About';
 import ProjectCard from '../components/ProjectCard';
 
 const sampleProject = {
@@ -10,6 +11,7 @@ const Home: React.FC = () => {
   return (
     <>
       <Hero />
+      <About />
       <ProjectCard project={sampleProject} />
     </>
   );
