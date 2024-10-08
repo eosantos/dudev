@@ -5,7 +5,7 @@ export const theme = {
     text: '#fff',
   },
   fonts: {
-    body: "'Roboto', sans-serif",
-    heading: "'Roboto', sans-serif",
+    body: "'Raleway', sans-serif",
+    heading: "'Raleway', sans-serif",
   },
 };
