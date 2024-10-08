@@ -1,6 +1,7 @@
 import Hero from '../components/Hero';
 import About from '../components/About';
 import ProjectCard from '../components/ProjectCard';
+import ParallaxSeparator from '../components/ParallaxSeparator';
 
 const sampleProject = {
   title: 'Meu Projeto',
@@ -11,6 +12,7 @@ const Home: React.FC = () => {
   return (
     <>
       <Hero />
+      <ParallaxSeparator />
       <About />
       <ProjectCard project={sampleProject} />
     </>
