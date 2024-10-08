@@ -15,13 +15,20 @@ const Nav = styled.nav<{ $isOpen: boolean }>`
   z-index: 1000;
   transition: all 0.3s ease;
 
-  // Quando o menu estiver aberto
+  @media (max-width: 768px) {
+    padding: 10% 10% 10% 10%;
+  }
+
   ${({ $isOpen }) =>
     $isOpen &&
     `
     flex-direction: column;
     align-items: center;
     padding: 2rem 0;
+    
+    @media (max-width: 768px) {
+      padding: 10% 0% 5% 0%;
+    }    
   `}
 `;
 
@@ -44,13 +51,13 @@ const Menu = styled.div<{ $isOpen: boolean }>`
       content: '';
       display: block;
       width: 100%;
-      height: 4px; // Altura da tarja
-      background-color: ${({ theme }) => theme.colors.primary}; // Cor da tarja
+      height: 4px;
+      background-color: ${({ theme }) => theme.colors.primary};
       position: absolute;
-      bottom: -8px; // Espaçamento entre o texto e a tarja
+      bottom: -8px;
       left: 0;
-      opacity: 0; // Inicialmente invisível
-      transition: opacity 0.3s ease; // Transição suave
+      opacity: 0;
+      transition: opacity 0.3s ease;
     }
 
     &:hover {
@@ -62,7 +69,6 @@ const Menu = styled.div<{ $isOpen: boolean }>`
     }
   }
 
-  // Ocultar o menu no mobile inicialmente
   @media (max-width: 768px) {
     display: ${({ $isOpen }) => ($isOpen ? 'flex' : 'none')};
     flex-direction: column;
@@ -111,19 +117,19 @@ const HamburgerMenu = styled.div<{ $isOpen: boolean }>`
 `;
 
 const Header = () => {
-  const [isOpen, setIsOpen] = React.useState(false); // Estado para controlar o menu
+  const [isOpen, setIsOpen] = React.useState(false);
 
   const toggleMenu = () => {
-    setIsOpen(prev => !prev); // Alterna o estado do menu
+    setIsOpen(prev => !prev);
   };
 
   return (
     <Nav $isOpen={isOpen}>
       <Logo
         style={{
-          width: '150px',
+          width: '178px',
           height: 'auto',
-          margin: isOpen ? '0 auto' : '0',
+          margin: isOpen ? '0 0 20px 0' : '0',
         }}
         alt="Logo Eduardo"
       />
