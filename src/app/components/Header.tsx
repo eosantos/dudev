@@ -5,7 +5,7 @@ import Logo from '../assets/svg/Dudev_003.svg';
 const Nav = styled.nav<{ $isOpen: boolean }>`
   font-family: 'Raleway', sans-serif;
   width: 100%;
-  padding: 4% 10% 4% 10%;
+  padding: 4% 10% 1% 10%;
   display: flex;
   justify-content: space-between;
   align-items: center;
