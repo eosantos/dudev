@@ -19,6 +19,11 @@ const AboutContainer = styled.div`
   flex-direction: row;
   margin: 40px 0;
   justify-content: space-between;
+
+  @media (max-width: 768px) {
+    flex-direction: column; // Muda para coluna em telas menores
+    align-items: center; // Centraliza os itens
+  }
 `;
 
 const TextSection = styled.div`
@@ -27,6 +32,11 @@ const TextSection = styled.div`
   margin: 20px 50px;
   color: ${({ theme }) => theme.colors.background};
   font-family: ${({ theme }) => theme.fonts.body};
+
+  @media (max-width: 768px) {
+    width: 90%; // Ajusta a largura em telas menores
+    margin: 20px 0; // Remove margens laterais
+  }
 `;
 
 const TextGreeting = styled.p`
@@ -34,6 +44,11 @@ const TextGreeting = styled.p`
   font-weight: 700;
   line-height: 5.5rem;
   margin: 0;
+
+  @media (max-width: 768px) {
+    font-size: 2.5rem; // Ajusta o tamanho da fonte
+    line-height: 4rem; // Ajusta o espaçamento
+  }
 `;
 
 const TextName = styled.p`
@@ -43,6 +58,11 @@ const TextName = styled.p`
 
   span {
     color: ${({ theme }) => theme.colors.primary};
+  }
+
+  @media (max-width: 768px) {
+    font-size: 1.5rem; // Ajusta o tamanho da fonte
+    line-height: 4rem; // Ajusta o espaçamento
   }
 `;
 
@@ -57,21 +77,33 @@ const TextParagraph = styled.p`
     color: ${({ theme }) => theme.colors.primary};
     font-weight: 600;
   }
+
+  @media (max-width: 768px) {
+    font-size: 1rem; // Ajusta o tamanho da fonte
+    margin-right: 0; // Remove margem direita em telas menores
+  }
 `;
 
 const ImageSection = styled.div`
   width: 40%;
+  position: relative;
+  height: 100%;
+  overflow: hidden;
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100%; /* Garantindo que a seção tenha altura 100% */
-  overflow: hidden; /* Oculta partes da imagem que ultrapassam o contêiner */
+
+  @media (max-width: 768px) {
+    width: 90%; // Ajusta a largura em telas menores
+    margin: 20px 0; // Margem para separar do texto
+  }
 
   img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover; /* Ajusta a imagem para cobrir todo o contêiner */
     border-radius: 0;
+    display: block;
+    height: 100%;
+    width: auto; // Permite ajuste da largura
+    max-width: 100%; // Garante que a imagem não ultrapasse o contêiner
   }
 `;
 
@@ -80,12 +112,20 @@ const SeparatorLine = styled.hr`
   border: 0;
   height: 2px;
   background-color: ${({ theme }) => theme.colors.primary};
+
+  @media (max-width: 768px) {
+    margin: 20px 0; // Ajusta margem em telas menores
+  }
 `;
 
 const SkillsTitle = styled.h2`
   font-family: ${({ theme }) => theme.fonts.heading};
   color: ${({ theme }) => theme.colors.primary};
   margin-bottom: 30px;
+
+  @media (max-width: 768px) {
+    font-size: 1.5rem; // Ajusta o tamanho da fonte
+  }
 `;
 
 const SkillsContainer = styled.div`
@@ -93,11 +133,19 @@ const SkillsContainer = styled.div`
   justify-content: flex-start;
   flex-wrap: wrap;
   gap: 20px; /* Espaçamento entre os ícones */
+
+  @media (max-width: 768px) {
+    justify-content: center; // Centraliza ícones em telas menores
+  }
 `;
 
 const SkillIcon = styled.div`
   font-size: 50px;
   color: ${({ theme }) => theme.colors.background};
+
+  @media (max-width: 768px) {
+    font-size: 40px; // Ajusta o tamanho do ícone
+  }
 `;
 
 const About: React.FC = () => {
@@ -182,7 +230,7 @@ const About: React.FC = () => {
         <Image
           src={ImagePerfil}
           alt="Imagem de perfil"
-          layout="responsive" // Define como você quer que a imagem se comporte
+          objectFit="cover" // Ajusta a imagem para cobrir o contêiner
         />
       </ImageSection>
     </AboutContainer>
