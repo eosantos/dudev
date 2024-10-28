@@ -20,49 +20,56 @@ const AboutContainer = styled.div`
   margin: 40px 0;
   justify-content: space-between;
 
-  @media (max-width: 768px) {
-    flex-direction: column; // Muda para coluna em telas menores
-    align-items: center; // Centraliza os itens
+  @media (max-width: 1024px) {
+    flex-direction: column;
+    align-items: center;
   }
 `;
 
 const TextSection = styled.div`
   width: 60%;
   padding: 20px;
-  margin: 20px 50px;
+  margin: 20px;
   color: ${({ theme }) => theme.colors.background};
   font-family: ${({ theme }) => theme.fonts.body};
 
+  @media (max-width: 1024px) {
+    width: 100%;
+    margin: 20px 0;
+    padding: 0px 40px;
+  }
+
   @media (max-width: 768px) {
-    width: 90%; // Ajusta a largura em telas menores
-    margin: 20px 0; // Remove margens laterais
+    width: 100%;
+    margin: 20px 0;
+    padding: 0px 20px;
   }
 `;
 
 const TextGreeting = styled.p`
   font-size: 3.5rem;
   font-weight: 700;
-  line-height: 5.5rem;
+  line-height: 4rem;
   margin: 0;
 
   @media (max-width: 768px) {
-    font-size: 2.5rem; // Ajusta o tamanho da fonte
-    line-height: 4rem; // Ajusta o espaçamento
+    font-size: 2.5rem;
+    line-height: 5.5rem;
   }
 `;
 
 const TextName = styled.p`
   font-size: 1.7rem;
   font-weight: 700;
-  line-height: 5rem;
+  line-height: 4rem;
 
   span {
     color: ${({ theme }) => theme.colors.primary};
   }
 
   @media (max-width: 768px) {
-    font-size: 1.5rem; // Ajusta o tamanho da fonte
-    line-height: 4rem; // Ajusta o espaçamento
+    font-size: 1.5rem;
+    line-height: 4rem;
   }
 `;
 
@@ -71,7 +78,7 @@ const TextParagraph = styled.p`
   font-weight: 400;
   margin-bottom: 1rem;
   margin-top: 0;
-  margin-right: 50px;
+  text-align: justify;
 
   span {
     color: ${({ theme }) => theme.colors.primary};
@@ -79,31 +86,41 @@ const TextParagraph = styled.p`
   }
 
   @media (max-width: 768px) {
-    font-size: 1rem; // Ajusta o tamanho da fonte
-    margin-right: 0; // Remove margem direita em telas menores
+    font-size: 1rem;
+    margin-right: 0;
   }
 `;
 
 const ImageSection = styled.div`
   width: 40%;
   position: relative;
-  height: 100%;
   overflow: hidden;
   display: flex;
   justify-content: center;
   align-items: center;
 
-  @media (max-width: 768px) {
-    width: 90%; // Ajusta a largura em telas menores
-    margin: 20px 0; // Margem para separar do texto
+  img {
+    border-radius: 0;
+    display: block;
+    height: 100%;
+    width: auto;
+  }
+
+  @media (max-width: 1024px) {
+    width: 100%;
+    height: 800px;
   }
 
   img {
     border-radius: 0;
     display: block;
-    height: 100%;
-    width: auto; // Permite ajuste da largura
-    max-width: 100%; // Garante que a imagem não ultrapasse o contêiner
+    width: 100%;
+    object-fit: cover;
+  }
+
+  @media (max-width: 768px) {
+    width: 100%;
+    height: 500px;
   }
 `;
 
@@ -114,7 +131,7 @@ const SeparatorLine = styled.hr`
   background-color: ${({ theme }) => theme.colors.primary};
 
   @media (max-width: 768px) {
-    margin: 20px 0; // Ajusta margem em telas menores
+    margin: 0;
   }
 `;
 
@@ -124,7 +141,7 @@ const SkillsTitle = styled.h2`
   margin-bottom: 30px;
 
   @media (max-width: 768px) {
-    font-size: 1.5rem; // Ajusta o tamanho da fonte
+    font-size: 1.5rem;
   }
 `;
 
@@ -132,10 +149,10 @@ const SkillsContainer = styled.div`
   display: flex;
   justify-content: flex-start;
   flex-wrap: wrap;
-  gap: 20px; /* Espaçamento entre os ícones */
+  gap: 20px; 
 
   @media (max-width: 768px) {
-    justify-content: center; // Centraliza ícones em telas menores
+    justify-content: center; menores
   }
 `;
 
@@ -144,7 +161,7 @@ const SkillIcon = styled.div`
   color: ${({ theme }) => theme.colors.background};
 
   @media (max-width: 768px) {
-    font-size: 40px; // Ajusta o tamanho do ícone
+    font-size: 40px;
   }
 `;
 
@@ -227,11 +244,7 @@ const About: React.FC = () => {
         </SkillsContainer>
       </TextSection>
       <ImageSection>
-        <Image
-          src={ImagePerfil}
-          alt="Imagem de perfil"
-          objectFit="cover" // Ajusta a imagem para cobrir o contêiner
-        />
+        <Image src={ImagePerfil} alt="Imagem de perfil" />
       </ImageSection>
     </AboutContainer>
   );

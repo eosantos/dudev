@@ -17,9 +17,18 @@ const Section = styled.section`
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 2rem;
+    gap: 3.5rem;
     width: 100%;
     max-width: 800px;
+
+    @media (max-width: 768px) {
+      max-width: 100%;
+      padding: 0 1rem;
+    }
+
+    @media (max-width: 480px) {
+      gap: 0.5rem;
+    }
   }
 
   .home-name-1 {
@@ -37,22 +46,22 @@ const Section = styled.section`
       margin-bottom: -13%;
     }
 
-    @media (max-width: 875px) {
-      font-size: 6rem;
+    @media (max-width: 775px) {
+      font-size: 5rem;
       letter-spacing: 0.5rem;
       margin-bottom: -12%;
     }
 
-    @media (max-width: 425px) {
+    @media (max-width: 540px) {
       font-size: 3.5rem;
-      letter-spacing: 0.4rem;
-      margin-bottom: -16%;
+      letter-spacing: 0.3rem;
+      margin-bottom: -10%;
     }
 
     @media (max-width: 375px) {
       font-size: 3rem;
-      letter-spacing: 0.4rem;
-      margin-bottom: -16%;
+      letter-spacing: 0.2rem;
+      margin-bottom: -8%;
     }
   }
 
@@ -70,24 +79,24 @@ const Section = styled.section`
     @media (max-width: 1200px) {
       font-size: 6rem;
       letter-spacing: 3rem;
-      padding-left: 25px;
+      padding-left: 20px;
     }
 
-    @media (max-width: 875px) {
-      font-size: 5rem;
+    @media (max-width: 775px) {
+      font-size: 4rem;
       letter-spacing: 1.8rem;
     }
 
-    @media (max-width: 425px) {
+    @media (max-width: 540px) {
       font-size: 3rem;
-      letter-spacing: 1.1rem;
+      letter-spacing: 1rem;
       padding-left: 10px;
     }
 
     @media (max-width: 375px) {
-      font-size: 2rem;
-      letter-spacing: 1.3rem;
-      padding-left: 10px;
+      font-size: 2.5rem;
+      letter-spacing: 0.8rem;
+      padding-left: 5px;
     }
   }
 
@@ -189,8 +198,8 @@ const Hero = () => {
         >
           Desenvolvedor Front-end
         </motion.p>
-        <span>|</span> {/* Span visível acima de 425px */}
-        <hr /> {/* HR visível abaixo de 425px */}
+        <span>|</span> {/* Span visível acima de 540px */}
+        <hr /> {/* HR visível abaixo de 540px */}
         <motion.p
           className="home-subtitle-2"
           initial={{ y: -250, opacity: 0 }}
@@ -199,8 +208,8 @@ const Hero = () => {
         >
           React
         </motion.p>
-        <span>|</span> {/* Span visível acima de 425px */}
-        <hr /> {/* HR visível abaixo de 425px */}
+        <span>|</span> {/* Span visível acima de 540px */}
+        <hr /> {/* HR visível abaixo de 540px */}
         <motion.p
           className="home-subtitle-3"
           initial={{ y: -250, opacity: 0 }}
