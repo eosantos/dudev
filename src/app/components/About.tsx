@@ -158,95 +158,115 @@ const SkillsContainer = styled.div`
 
 const SkillIcon = styled.div`
   font-size: 50px;
-  color: ${({ theme }) => theme.colors.background};
+  color: #282828; /* Cor padrão */
+  transition:
+    transform 0.2s ease,
+    color 0.2s ease,
+    box-shadow 0.2s ease;
 
-  @media (max-width: 768px) {
-    font-size: 40px;
+  /* Efeito no ícone diretamente */
+  & > svg {
+    transition:
+      transform 0.2s ease,
+      color 0.2s ease,
+      box-shadow 0.2s ease;
   }
+
+  &:hover > svg {
+    color: #ff4713; /* Cor ao passar o mouse */
+    transform: scale(1.2); /* Aumenta o tamanho para 120% */
+  }
+`;
+
+const AboutSection = styled.section`
+  scroll-margin-top: 120px; /* Altura do header */
+  /* Outras propriedades da seção 'about' */
 `;
 
 const About: React.FC = () => {
   return (
-    <AboutContainer>
-      <TextSection>
-        <TextGreeting>Olá,</TextGreeting>
-        <TextName>
-          meu nome é <span>Eduardo Oliveira</span>
-        </TextName>
-        <TextParagraph>
-          Sou desenvolvedor <span>front-end</span> com uma sólida experiência em{' '}
-          <span>JavaScript</span>, <span>ReactJS</span> e{' '}
-          <span>TypeScript</span>, e atualmente estou focado em projetos com
-          Next.js. Tenho uma forte paixão por criar interfaces de usuário
-          responsivas e intuitivas, sempre buscando a melhor experiência
-          possível para o usuário. Utilizo ferramentas como{' '}
-          <span>Styled-Components</span> e <span>SASS</span> para desenvolver
-          layouts modernos e funcionais.
-        </TextParagraph>
-        <TextParagraph>
-          Minha experiência inclui o uso de bibliotecas e frameworks como{' '}
-          <span>Redux</span> para gerenciamento de estado e <span>Axios</span>{' '}
-          para integração com <span>APIs</span>. Também tenho habilidades em{' '}
-          <span>NodeJS</span>, <span>Bootstrap</span>, <span>MUI</span>,{' '}
-          <span>Jest</span>, <span>Cypress</span>, <span>SQL</span> e{' '}
-          <span>Docker</span>, o que me permite desenvolver aplicações robustas
-          e escaláveis. Além disso, utilizo <span>Figma</span> para criar
-          wireframes e protótipos, garantindo um design eficaz.
-        </TextParagraph>
-        <TextParagraph>
-          Já possuo conhecimentos em Arquitetura de Software e metodologias
-          ágeis, como Scrum e Kanban, e atualmente estou estudando Arquitetura
-          de Software e Node.js com o objetivo de me tornar um desenvolvedor{' '}
-          <span>full-stack</span> no futuro.
-        </TextParagraph>
-        <TextParagraph>
-          Estou aberto a oportunidades de colaboração e desafios empolgantes na
-          indústria de tecnologia. Sinta-se à vontade para entrar em contato e
-          conhecer mais sobre o meu trabalho!
-        </TextParagraph>
+    <AboutSection id="about">
+      <AboutContainer>
+        <TextSection>
+          <TextGreeting>Olá,</TextGreeting>
+          <TextName>
+            meu nome é <span>Eduardo Oliveira</span>
+          </TextName>
+          <TextParagraph>
+            Sou desenvolvedor <span>front-end</span> com uma sólida experiência
+            em <span>JavaScript</span>, <span>ReactJS</span> e{' '}
+            <span>TypeScript</span>, e atualmente estou focado em projetos com
+            Next.js. Tenho uma forte paixão por criar interfaces de usuário
+            responsivas e intuitivas, sempre buscando a melhor experiência
+            possível para o usuário. Utilizo ferramentas como{' '}
+            <span>Styled-Components</span> e <span>SASS</span> para desenvolver
+            layouts modernos e funcionais.
+          </TextParagraph>
+          <TextParagraph>
+            Minha experiência inclui o uso de bibliotecas e frameworks como{' '}
+            <span>Redux</span> para gerenciamento de estado e <span>Axios</span>{' '}
+            para integração com <span>APIs</span>. Também tenho habilidades em{' '}
+            <span>NodeJS</span>, <span>Bootstrap</span>, <span>MUI</span>,{' '}
+            <span>Jest</span>, <span>Cypress</span>, <span>SQL</span> e{' '}
+            <span>Docker</span>, o que me permite desenvolver aplicações
+            robustas e escaláveis. Além disso, utilizo <span>Figma</span> para
+            criar wireframes e protótipos, garantindo um design eficaz.
+          </TextParagraph>
+          <TextParagraph>
+            Já possuo conhecimentos em Arquitetura de Software e metodologias
+            ágeis, como Scrum e Kanban, e atualmente estou estudando Arquitetura
+            de Software e Node.js com o objetivo de me tornar um desenvolvedor{' '}
+            <span>full-stack</span> no futuro.
+          </TextParagraph>
+          <TextParagraph>
+            Estou aberto a oportunidades de colaboração e desafios empolgantes
+            na indústria de tecnologia. Sinta-se à vontade para entrar em
+            contato e conhecer mais sobre o meu trabalho!
+          </TextParagraph>
 
-        <TextName>
-          <span>Espero que goste do meu portfólio!</span>
-        </TextName>
-        <SeparatorLine />
-        <SkillsTitle>SKILLS</SkillsTitle>
-        <SkillsContainer>
-          <SkillIcon>
-            <FaReact />
-          </SkillIcon>
-          <SkillIcon>
-            <SiTypescript />
-          </SkillIcon>
-          <SkillIcon>
-            <FaNodeJs />
-          </SkillIcon>
-          <SkillIcon>
-            <SiRedux />
-          </SkillIcon>
-          <SkillIcon>
-            <SiAxios />
-          </SkillIcon>
-          <SkillIcon>
-            <FaGitAlt />
-          </SkillIcon>
-          <SkillIcon>
-            <SiJest />
-          </SkillIcon>
-          <SkillIcon>
-            <SiCypress />
-          </SkillIcon>
-          <SkillIcon>
-            <FaDocker />
-          </SkillIcon>
-          <SkillIcon>
-            <FaSass />
-          </SkillIcon>
-        </SkillsContainer>
-      </TextSection>
-      <ImageSection>
-        <Image src={ImagePerfil} alt="Imagem de perfil" />
-      </ImageSection>
-    </AboutContainer>
+          <TextName>
+            <span>Espero que goste do meu portfólio!</span>
+          </TextName>
+          <SeparatorLine />
+          <SkillsTitle>SKILLS</SkillsTitle>
+          <SkillsContainer>
+            <SkillIcon>
+              <FaReact />
+            </SkillIcon>
+            <SkillIcon>
+              <SiTypescript />
+            </SkillIcon>
+            <SkillIcon>
+              <FaNodeJs />
+            </SkillIcon>
+            <SkillIcon>
+              <SiRedux />
+            </SkillIcon>
+            <SkillIcon>
+              <SiAxios />
+            </SkillIcon>
+            <SkillIcon>
+              <FaGitAlt />
+            </SkillIcon>
+            <SkillIcon>
+              <SiJest />
+            </SkillIcon>
+            <SkillIcon>
+              <SiCypress />
+            </SkillIcon>
+            <SkillIcon>
+              <FaDocker />
+            </SkillIcon>
+            <SkillIcon>
+              <FaSass />
+            </SkillIcon>
+          </SkillsContainer>
+        </TextSection>
+        <ImageSection>
+          <Image src={ImagePerfil} alt="Imagem de perfil" />
+        </ImageSection>
+      </AboutContainer>
+    </AboutSection>
   );
 };
 

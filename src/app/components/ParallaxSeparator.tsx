@@ -68,7 +68,10 @@ const Arrow = styled(motion.div)`
 // Componente ParallaxSeparator
 const ParallaxSeparator: React.FC = () => {
   const scrollDown = () => {
-    window.scrollBy({ top: 300, behavior: 'smooth' }); // Rola 300px para baixo
+    const aboutSection = document.getElementById('about');
+    if (aboutSection) {
+      aboutSection.scrollIntoView({ behavior: 'smooth' });
+    }
   };
 
   return (

@@ -15,6 +15,8 @@ const Home: React.FC = () => {
       <ParallaxSeparator />
       <About />
       <ProjectCard project={sampleProject} />
+      <ProjectCard project={sampleProject} />
+      <ProjectCard project={sampleProject} />
     </>
   );
 };
